@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+#
+# Learning about the LEDs on the EV3 Brick
+# Introduces lists and loops.
+#
+
 import os
 import time
 
@@ -28,3 +33,7 @@ for colour in colours:
     leds.set_color("RIGHT", colour)
     time.sleep(2)
 
+#
+# Can you change the colours to make the lights operate in the same pattern
+# as a traffic light? eg GREEN -> AMBER (ORANGE) -> RED -> GREEN -> AMBER (ORANGE) -> RED
+#
