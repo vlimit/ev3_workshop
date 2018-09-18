@@ -1,0 +1,6 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Use LF endings for python files so they run correctly on the EV3 brick.
+*.py eol=lf
+
