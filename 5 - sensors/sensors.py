@@ -27,27 +27,30 @@ os.system('setfont Lat15-Terminus24x12')
 
 ###############################################################################
 # 1. The touch sensor
+#    This is a simple switch.
 ###############################################################################
-"""
+
 touch_sensor = TouchSensor()
 sound.speak('Please press the touch sensor')
 
 ## This is a 'while' loop. The condition after 'while' is tested each time the indented code runs 
 while True:                             # <- The condition here is "True". This means the loop runs continuously.
     if touch_sensor.is_pressed == True: # <- This is a condition. The 'break' code underneath runs if the condition is true.
-        break                           # <- This jumps out of the while loop.
+        break                           # <- This "jumps out" of the while loop.
     time.sleep(0.1)                     # <- What do you think this does?
 
+#  The while loop above runs until you press the switch. And then we...
 sound.play('breaking_glass.wav')
-"""
 
-## Note that we could have written the while loop in fewer lines of code:
+## Note that we could have written the while loop in fewer lines of code. Read 
+## these lines and see if they make sense
 #while not touch_sensor.is_pressed:
 #    time.sleep(0.1)
 
+
 ###############################################################################
 # 2. The infrared sensor
-#    This sensor can tell you how far away an object is (it's not very accurate)
+#    This sensor can tell you how far away an object is (it's not very accurate).
 ############################################################################### 
 
 #
@@ -56,13 +59,13 @@ sound.play('breaking_glass.wav')
 
 #range_sensor = InfraredSensor()
 #while True:
-#    print('%d %\r' % (range_sensor.proximity)) # Display the distance on the screen.
+#    print('%d \%\r' % (range_sensor.proximity)) # Display the distance on the screen.
 #    time.sleep(0.5)
 
-# How does the number on the screen change as you move your hand in front of it?
-# The number (proximity) displays the percentage of the maximum range. 
-#   - 0% should be really close to the sensor
-#   - 100% should be around 70cm.
+## How does the number on the screen change as you move your hand in front of it?
+## The number (proximity) displays the percentage of the maximum range. 
+##   - 0% should be really close to the sensor
+##   - 100% should be around 70cm.
 
 #
 # 2.2 Uncomment this code to break a window :).
@@ -73,14 +76,44 @@ sound.play('breaking_glass.wav')
 #    if range_sensor.proximity < 100:           # <- Play a sound if an object is in front of the sensor.
 #        sound.play('breaking_glass.wav')
 #    time.sleep(0.1)
-    
+
 ###############################################################################
-# 3. The colour sensor
+# 3. The ultrasonic sensor
+#    This sensor can tell you how far away an object is. It works in the same
+#    way that bats and submarines detect objects around them. It's pretty accurate.
+############################################################################### 
+
+#
+# 3.1 Uncomment this code to see how the ultrasonic sensor detects distance
+#
+
+#range_sensor = UltrasonicSensor()
+#while True:
+#    print (range_sensor.distance_centimeters)
+#    print('%3.1f cm\r' % (range_sensor.distance_centimeters)) # Display the distance on the screen.
+#    time.sleep(0.5)
+
+## How does the number on the screen change as you move your hand in front of it?
+## The number (proximity) displays the distance in centremetres. 
+
+#
+# 3.2 Uncomment this code to break a window :).
+#
+
+range_sensor = UltrasonicSensor()
+while True:
+    if range_sensor.distance_centimeters < 150:           # <- Play a sound if an object is in front of the sensor.
+        sound.play('breaking_glass.wav')
+    time.sleep(0.1)
+
+
+###############################################################################
+# 4. The colour sensor
 #    This sensor tells you the colour of an object in front of it.
 ############################################################################### 
 
 #
-# 2.1 Uncomment this code to see how colour sensor detects colour.
+# 4.1 Uncomment this code to see how colour sensor detects colour.
 #     The colour is displayed on the screen. The sensor works best when the sensor
 #     is very close to an object (can you guess why?).
 #
