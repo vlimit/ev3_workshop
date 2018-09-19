@@ -70,7 +70,7 @@ class MyRobot:
         tank_drive.on_for_rotations(
             SpeedPercent(speed),
             SpeedPercent(-speed),
-            0.3 * angle / 90
+            0.9 * angle / 90
         )
 
     def right(self, angle=90, speed=None):
@@ -82,7 +82,7 @@ class MyRobot:
         tank_drive.on_for_rotations(
             SpeedPercent(-speed),
             SpeedPercent(speed),
-            0.3 * angle / 90
+            0.9 * angle / 90
         )
 
 
