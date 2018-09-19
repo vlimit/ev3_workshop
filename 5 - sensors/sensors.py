@@ -77,6 +77,7 @@ sound.play('breaking_glass.wav')
 #        sound.play('breaking_glass.wav')
 #    time.sleep(0.1)
 
+
 ###############################################################################
 # 3. The ultrasonic sensor
 #    This sensor can tell you how far away an object is. It works in the same
@@ -100,11 +101,11 @@ sound.play('breaking_glass.wav')
 # 3.2 Uncomment this code to break a window :).
 #
 
-range_sensor = UltrasonicSensor()
-while True:
-    if range_sensor.distance_centimeters < 150:           # <- Play a sound if an object is in front of the sensor.
-        sound.play('breaking_glass.wav')
-    time.sleep(0.1)
+#range_sensor = UltrasonicSensor()
+#while True:
+#    if range_sensor.distance_centimeters < 150:           # <- Play a sound if an object is in front of the sensor.
+#        sound.play('breaking_glass.wav')
+#    time.sleep(0.1)
 
 
 ###############################################################################
