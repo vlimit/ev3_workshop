@@ -10,9 +10,6 @@ import time
 
 from ev3dev2.led import Leds
 
-# Now we're getting a bit tricky. What's a font? What do you think 24x12 means?
-os.system('setfont Lat15-Terminus24x12')
-
 # An LED is a type of light. That's what lights up the front of the EV3 brick.
 # And you can change their colour
 
